@@ -1,0 +1,81 @@
+/*
+ * 设计令牌：罗德岛工业白（Arknights PV 语言）
+ * 冷白纸底 · 墨黑主色 · 信号黄唯一强调 · 红色只用于警示
+ * 旧变量名保留并重新映射，组件可渐进迁移。
+ */
+:root {
+  /* 纸与墨 */
+  --paper: #ecedeb;          /* 页面底 */
+  --paper-2: #e3e4e1;        /* 次级底 / 凹槽 */
+  --sheet: #f8f8f6;          /* 面板（纸片） */
+  --sheet-2: #ffffff;
+  --ink: #111214;            /* 主墨 */
+  --ink-2: #3b3d42;
+  --ink-3: #6e7178;
+  --ink-4: #a3a6ab;
+  --hair: #c9cbc8;           /* 发丝线 */
+  --hair-strong: #8d9094;
+
+  /* 信号色 */
+  --signal: #ffd31a;         /* 信号黄：唯一强调 */
+  --signal-deep: #e0b400;
+  --signal-ink: #111214;     /* 黄底上的字 */
+  --alert: #e5402b;          /* 警示红 */
+  --rhodes: #1f8fb5;         /* 罗德岛青：仅用于法术伤害 */
+  --ok: #2f9d62;
+
+  /* 伤害类型 */
+  --dmg-physical: #111214;
+  --dmg-arts: #1f8fb5;
+  --dmg-true: #8d9094;
+  --dmg-elemental: #2f9d62;
+
+  /* 费用阶（降饱和，配白底） */
+  --lv-1: #9a9da2;
+  --lv-2: #4f9a62;
+  --lv-3: #3b7fbf;
+  --lv-4: #7c5cc4;
+  --lv-5: #d29a12;
+  --lv-6: #d4502f;
+
+  /* —— 旧名映射（暗色时代的变量），保证未迁移组件可读 —— */
+  --bg-0: var(--paper);
+  --bg-1: var(--sheet);
+  --bg-2: var(--paper-2);
+  --bg-3: #d8dad6;
+  --line: var(--hair);
+  --line-strong: var(--hair-strong);
+  --fg-0: var(--ink);
+  --fg-1: var(--ink-2);
+  --fg-2: var(--ink-3);
+  --fg-3: var(--ink-4);
+  --accent: var(--ink);
+  --accent-dim: var(--hair-strong);
+  --accent-glow: rgba(17, 18, 20, 0.12);
+  --warn: var(--signal-deep);
+  --warn-glow: rgba(255, 211, 26, 0.45);
+  --gold: var(--signal);
+  --gold-glow: rgba(255, 211, 26, 0.5);
+  --danger: var(--alert);
+
+  --radius-s: 0px;
+  --radius-m: 2px;
+  --radius-l: 2px;
+
+  --font-ui: 'HarmonyOS Sans SC', 'MiSans', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei UI', 'Microsoft YaHei', system-ui, sans-serif;
+  /* 压缩无衬线：Windows 自带 Bahnschrift，可变宽 */
+  --font-display: 'Bahnschrift', 'DIN Condensed', 'Barlow Condensed', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-num: 'Bahnschrift', 'DIN Alternate', 'Roboto Condensed', 'Segoe UI', var(--font-ui);
+  --font-mono: 'JetBrains Mono', 'Cascadia Mono', Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-cut: cubic-bezier(0.83, 0, 0.17, 1);   /* PV 式硬切 */
+  --t-fast: 140ms;
+  --t-mid: 260ms;
+  --t-slow: 520ms;
+
+  /* 警示斜纹 */
+  --hazard: repeating-linear-gradient(-45deg, var(--signal) 0 8px, var(--ink) 8px 16px);
+  --hazard-faint: repeating-linear-gradient(-45deg, rgba(17, 18, 20, 0.07) 0 6px, transparent 6px 12px);
+}

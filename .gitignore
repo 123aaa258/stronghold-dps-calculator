@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist-local/
+.cache/
+public/assets/
+.npm-cache/
+*.log
+.DS_Store

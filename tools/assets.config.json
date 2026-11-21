@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "gameResource": {
+      "repository": "yuanyan3060/ArknightsGameResource",
+      "commit": "4757eb5bb92366125aaf03ae0bdd42841d42c333",
+      "reference": "https://github.com/yuanyan3060/ArknightsGameResource/commits/main/"
+    },
+    "autochess": {
+      "repository": "ArknightsAssets/ArknightsAssets2",
+      "commit": "a2d87c86fe4b4dd8b818ffe05b6c1ae2ad65e8ff",
+      "reference": "https://github.com/ArknightsAssets/ArknightsAssets2/commits/cn"
+    },
+    "gameResourceUpdated": {
+      "repository": "yuanyan3060/ArknightsGameResource",
+      "commit": "18e73996a5a16f78a0af7773a2d2a0f4991ac6ba",
+      "reference": "https://github.com/yuanyan3060/ArknightsGameResource/commits/main/"
+    },
+    "autochessUpdated": {
+      "repository": "ArknightsAssets/ArknightsAssets2",
+      "commit": "727b9742c9f09db96e5365edfda5188752a8ab5e",
+      "reference": "https://github.com/ArknightsAssets/ArknightsAssets2/commits/cn"
+    }
+  },
+  "assets": {
+    "avatar": {"source": "gameResource", "paths": ["avatar/{id}.png", "avatar/{id}_2.png"], "directory": "char", "maxWidth": 180, "maxHeight": 180, "fallbacks": [{"source": "gameResourceUpdated", "paths": ["avatar/{id}.png", "avatar/{id}_2.png"]}]},
+    "portrait": {"source": "gameResource", "paths": ["skin/{id}_1b.png", "skin/{id}_2b.png"], "directory": "portrait", "maxWidth": 720, "fallbacks": [{"source": "gameResourceUpdated", "paths": ["skin/{id}_1b.png", "skin/{id}_2b.png"]}]},
+    "boss": {"source": "gameResource", "paths": ["enemy/{id}.png"], "directory": "boss", "maxWidth": 720, "fallbacks": [{"source": "gameResourceUpdated", "paths": ["enemy/{id}.png"]}]},
+    "bond": {"source": "autochess", "paths": ["assets/dyn/ui/autochess/[uc]autochesscommon/arts/bondicon/{id}.png"], "directory": "bond", "maxWidth": 180, "fallbacks": [{"source": "autochessUpdated", "paths": ["assets/dyn/ui/autochess/[uc]autochesscommon/arts/bondicon/{id}.png"]}]},
+    "equip": {"source": "autochess", "paths": ["assets/dyn/ui/autochess/[uc]autochesscommon/arts/shopitemicon/{id}.png"], "directory": "equip", "maxWidth": 180, "fallbacks": [{"source": "autochessUpdated", "paths": ["assets/dyn/ui/autochess/[uc]autochesscommon/arts/shopitemicon/{id}.png"]}]}
+  },
+  "notes": [
+    "公开解包仓库；游戏图片版权属于鹰角等原权利人，不属于本项目的代码开源许可。",
+    "保留既有主快照；主源 404/410 后按配置顺序尝试更新快照，所有来源锁定完整 commit。覆盖率以 npm run assets 实测报告为准。",
+    "portrait 使用 skin 下完整立绘；默认取 _1b，只有 HTTP 404/410 才尝试 _2b，不以半身像代替。",
+    "部分模板只提供精二头像，例如医疗阿米娅。原头像缺失时取同一模板的 _2.png。",
+    "盟约 iconId 小写化来自同模式开源项目的资源映射；装备使用 trapId，Boss 只用明确 enemyId，缺图不借用其他敌人。"
+  ],
+  "pathReferences": [
+    "https://github.com/yuanyan3060/ArknightsGameResource/tree/main/skin",
+    "https://raw.githubusercontent.com/yuanyan3060/ArknightsGameResource/main/README.md",
+    "https://raw.githubusercontent.com/sganggs/Stronghold-Protocol/master/tools/assets/plan.mjs"
+  ]
+}

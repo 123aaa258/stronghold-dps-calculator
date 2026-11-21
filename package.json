@@ -1,0 +1,28 @@
+{
+  "name": "garrison-dps",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js --host 127.0.0.1",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview --host 127.0.0.1",
+    "check": "node node_modules/svelte-check/bin/svelte-check --tsconfig ./tsconfig.json",
+    "test": "node node_modules/vitest/vitest.mjs run --maxWorkers=1",
+    "data": "node tools/fetch-gamedata.ts && node tools/extract/index.ts",
+    "assets": "node tools/fetch-assets.ts",
+    "coverage": "node tools/engine-coverage.ts",
+    "build:local": "node node_modules/vite/bin/vite.js build --config vite.local.config.ts"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/node": "^24.0.0",
+    "sharp": "^0.35.5",
+    "svelte": "^5.57.0",
+    "svelte-check": "^4.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.0.0",
+    "vitest": "^4.0.0"
+  }
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "modeId": "mode_single_funny",
+    "name": "极速模拟",
+    "difficulty": "FAST",
+    "sortId": 10
+  },
+  {
+    "modeId": "mode_single_1",
+    "name": "规程等级1",
+    "difficulty": "FUNNY",
+    "sortId": 11
+  },
+  {
+    "modeId": "mode_single_2",
+    "name": "规程等级2",
+    "difficulty": "FUNNY",
+    "sortId": 12
+  },
+  {
+    "modeId": "mode_single_3",
+    "name": "规程等级3",
+    "difficulty": "FUNNY",
+    "sortId": 13
+  },
+  {
+    "modeId": "mode_single_4",
+    "name": "规程等级4",
+    "difficulty": "FUNNY",
+    "sortId": 14
+  },
+  {
+    "modeId": "mode_single_5",
+    "name": "规程等级5",
+    "difficulty": "NORMAL",
+    "sortId": 15
+  },
+  {
+    "modeId": "mode_single_6",
+    "name": "规程等级6",
+    "difficulty": "NORMAL",
+    "sortId": 16
+  },
+  {
+    "modeId": "mode_single_7",
+    "name": "规程等级7",
+    "difficulty": "NORMAL",
+    "sortId": 17
+  },
+  {
+    "modeId": "mode_single_8",
+    "name": "规程等级8",
+    "difficulty": "NORMAL",
+    "sortId": 18
+  },
+  {
+    "modeId": "mode_single_9",
+    "name": "规程等级9",
+    "difficulty": "HARD",
+    "sortId": 19
+  },
+  {
+    "modeId": "mode_single_10",
+    "name": "规程等级10",
+    "difficulty": "HARD",
+    "sortId": 20
+  },
+  {
+    "modeId": "mode_single_11",
+    "name": "规程等级11",
+    "difficulty": "HARD",
+    "sortId": 21
+  },
+  {
+    "modeId": "mode_single_12",
+    "name": "规程等级12",
+    "difficulty": "HARD",
+    "sortId": 22
+  },
+  {
+    "modeId": "mode_single_13",
+    "name": "规程等级13",
+    "difficulty": "HARD",
+    "sortId": 23
+  },
+  {
+    "modeId": "mode_single_14",
+    "name": "规程等级14",
+    "difficulty": "HARD",
+    "sortId": 24
+  },
+  {
+    "modeId": "mode_single_15",
+    "name": "规程等级15",
+    "difficulty": "ABYSS",
+    "sortId": 25
+  },
+  {
+    "modeId": "mode_single_16",
+    "name": "规程等级16",
+    "difficulty": "ABYSS",
+    "sortId": 26
+  },
+  {
+    "modeId": "mode_single_17",
+    "name": "规程等级17",
+    "difficulty": "ABYSS",
+    "sortId": 27
+  },
+  {
+    "modeId": "mode_single_18",
+    "name": "规程等级18",
+    "difficulty": "ABYSS",
+    "sortId": 28
+  },
+  {
+    "modeId": "mode_single_19",
+    "name": "规程等级19",
+    "difficulty": "ABYSS",
+    "sortId": 29
+  },
+  {
+    "modeId": "mode_single_20",
+    "name": "规程等级20",
+    "difficulty": "ABYSS",
+    "sortId": 30
+  },
+  {
+    "modeId": "mode_multi_funny",
+    "name": "标准模拟",
+    "difficulty": "FUNNY",
+    "sortId": 100
+  },
+  {
+    "modeId": "mode_multi_normal",
+    "name": "险境模拟",
+    "difficulty": "NORMAL",
+    "sortId": 101
+  },
+  {
+    "modeId": "mode_multi_hard",
+    "name": "绝境模拟",
+    "difficulty": "HARD",
+    "sortId": 102
+  },
+  {
+    "modeId": "mode_multi_abyss",
+    "name": "终极模拟",
+    "difficulty": "ABYSS",
+    "sortId": 103
+  }
+]

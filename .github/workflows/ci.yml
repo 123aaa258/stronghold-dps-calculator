@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 提取测试读取未入库的 .cache/gamedata/，先按锁定提交下载原始数据。
+      - name: Download game data
+        run: node tools/fetch-gamedata.ts
+
+      - name: Test
+        run: npm test
+
+      - name: Type check
+        run: npm run check
+
+      - name: Build
+        run: npm run build

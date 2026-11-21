@@ -1,0 +1,29 @@
+{
+  "source": "Kengxxiao/ArknightsGameData",
+  "commit": "7e560050b03c34661db1d322d008733072352b2a",
+  "dataVersion": "79.4.0",
+  "activityId": "act3autochess",
+  "generatedAt": "2026-11-18T12:21:34.432Z",
+  "cultivation": {
+    "1": {
+      "atk": 1,
+      "def": 1,
+      "maxHp": 1
+    },
+    "1001": {
+      "atk": 1.05,
+      "def": 1.05,
+      "maxHp": 1
+    },
+    "2001": {
+      "atk": 1.1,
+      "def": 1.05,
+      "maxHp": 1.05
+    },
+    "2060": {
+      "atk": 1.1,
+      "def": 1.1,
+      "maxHp": 1.1
+    }
+  }
+}
