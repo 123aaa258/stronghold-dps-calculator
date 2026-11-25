@@ -63,6 +63,15 @@ describe('精准狙击镜', () => {
     const modifiers = [...e.modifiers, { group: '盟约增伤（维多利亚/谢拉格）', kind: 'increase' as const, value: 0.2 }];
     expect(damage({ attack: 1000, type: 'arts', resistance: 0, modifiers }).perHit).toBeCloseTo(1800, 8);
   });
+  it('同名狙击镜携带多件时每件各自相乘', () => {
+    // 两件进阶：1.5 × 1.5 = 2.25（同区加算会是 2.0）；普通 + 进阶：1.3 × 1.5 = 1.95。
+    const base = calc('char_367_swllow', 'skchr_swllow_2', 'b', []);
+    const two = calc('char_367_swllow', 'skchr_swllow_2', 'b', [['精准狙击镜', 'b'], ['精准狙击镜', 'b']]);
+    expect(two.normal.dps).toBeCloseTo(base.normal.dps * 2.25, 8);
+    expect(two.skill!.dps).toBeCloseTo(base.skill!.dps * 2.25, 8);
+    const mixed = calc('char_367_swllow', 'skchr_swllow_2', 'b', [['精准狙击镜', 'a'], ['精准狙击镜', 'b']]);
+    expect(mixed.normal.dps).toBeCloseTo(base.normal.dps * 1.95, 8);
+  });
 });
 
 describe('卡西米尔竞技旗', () => {

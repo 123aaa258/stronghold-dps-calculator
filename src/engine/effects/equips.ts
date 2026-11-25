@@ -39,8 +39,11 @@ export interface EquipContext {
   fieldHammers?: string[];
 }
 
-/** 装备增伤按装备各自分区，与盟约增伤（维多利亚/谢拉格）及其他装备增伤相乘。来源：模型假设。 */
-const equipDamageGroup = (name: string) => `装备增伤：${name}`;
+/**
+ * 装备增伤按每件装备各自分区，与盟约增伤（维多利亚/谢拉格）及其他装备增伤相乘；
+ * 同名装备携带多件时每件也各自成区，如两件进阶精准狙击镜为 1.5 × 1.5 = 2.25。来源：模型假设。
+ */
+const equipDamageGroup = (name: string, copy: number) => `装备增伤：${name}${copy > 1 ? ` #${copy}` : ''}`;
 
 /** 满层后追加伤害的每次攻击期望次数：成功后 cooldown 内的攻击不能再触发。 */
 export function splashPerAttack(interval: number, probability: number, cooldown: number) {
@@ -84,8 +87,11 @@ export function combineEquips(list: EquipData[]): { equips: EquipData[]; combine
 }
 
 export function applyEquips(e: BattleEffects, equips: EquipData[], activeBondCount: number, context: EquipContext = {}): void {
+  const copies = new Map<string, number>();
   for (const equip of equips) {
     const source = `equip:${equip.chessId}`;
+    const copy = (copies.get(equip.name) ?? 0) + 1;
+    copies.set(equip.name, copy);
     const buff = (key: string) => equip.buffs.find(b => b.blackboard.strs?.key === key)?.blackboard;
     const nums = (key: string) => buff(key)?.nums ?? {};
     const add = (stat: StatModifier['stat'], bucket: StatModifier['bucket'], value: number, skill = false) => {
@@ -103,7 +109,7 @@ export function applyEquips(e: BattleEffects, equips: EquipData[], activeBondCou
       e.stacks.push({ trigger, max, modifier: { stat, bucket, value, source } });
       record(e, source, `${equip.name} 每层${stat}（最多${max}层）`, value);
     };
-    const increase = (scale: number) => e.modifiers.push({ group: equipDamageGroup(equip.name), kind: 'increase', value: scale - 1, source });
+    const increase = (scale: number) => e.modifiers.push({ group: equipDamageGroup(equip.name, copy), kind: 'increase', value: scale - 1, source });
     /** 百分比穿透：多个来源按 1-(1-a)(1-b) 相乘合并（模型假设）。 */
     const penetrate = (def: number, res: number) => {
       e.defPenetrationPct = 1 - (1 - e.defPenetrationPct) * (1 - def);
